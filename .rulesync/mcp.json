@@ -25,6 +25,15 @@
         "@upstash/context7-mcp"
       ],
       "env": {}
+    },
+    "excalidraw": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "excalidraw-mcp"
+      ],
+      "env": {}
     }
   }
 }
