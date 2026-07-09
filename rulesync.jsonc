@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/dyoshikawa/rulesync/refs/heads/main/config-schema.json",
-  "targets": ["*"],
+  "targets": ["cursor", "claudecode", "codexcli"],
   "features": ["rules", "ignore", "commands", "subagents", "skills"],
   "delete": true
 }
