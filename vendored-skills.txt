@@ -1,3 +1,4 @@
 # Skills vendored from upstream repos, refreshed by `make update-vendored`.
 # Format: <skill-name> <raw-url-to-SKILL.md>
 humanizer https://raw.githubusercontent.com/blader/humanizer/main/SKILL.md
+bro https://raw.githubusercontent.com/dmmulroy/skills/main/bro/SKILL.md

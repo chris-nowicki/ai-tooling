@@ -54,7 +54,8 @@ overwrites the local copy, so never hand-edit a vendored `SKILL.md` — put loca
 changes in a separate skill or rule instead. The copies are committed, so `make setup`
 on a new machine installs them without network access to the upstream repos.
 
-Currently vendored: `humanizer` (from [blader/humanizer](https://github.com/blader/humanizer), MIT).
+Currently vendored: `humanizer` (from [blader/humanizer](https://github.com/blader/humanizer), MIT)
+and `bro` (from [dmmulroy/skills](https://github.com/dmmulroy/skills), MIT).
 
 ### Configuration Files
 

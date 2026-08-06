@@ -42,6 +42,7 @@ listed in `vendored-skills.txt` (skill name plus the raw URL of its `SKILL.md`):
 | Skill | Upstream |
 |-------|----------|
 | `humanizer` | [blader/humanizer](https://github.com/blader/humanizer) (MIT) |
+| `bro` | [dmmulroy/skills](https://github.com/dmmulroy/skills/tree/main/bro) (MIT) |
 
 Because the copies are committed, a fresh machine gets them from `make setup` alone
 — no extra install step. To pick up upstream changes, run `make update-vendored`
