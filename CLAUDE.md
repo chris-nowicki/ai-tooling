@@ -20,6 +20,9 @@ make sync
 # Preview what will be generated without writing files
 make dry-run
 
+# Re-download skills vendored from upstream repos (see vendored-skills.txt)
+make update-vendored
+
 # Verify generated files haven't drifted from source
 make check
 ```
@@ -40,8 +43,18 @@ make check
 | `rules/` | Coding guidelines (`code-style.md` — covers style, TypeScript, and architecture). Frontmatter `root: true` means it applies globally. |
 | `commands/` | Custom slash commands (e.g., `/commit`, `/create-pr`). Each `.md` file becomes a command. |
 | `subagents/` | Specialized AI agent definitions (e.g., `planner.md` — read-only analysis agent). |
-| `skills/` | Reusable instruction sets. Each skill is a directory containing a `SKILL.md`. |
+| `skills/` | Reusable instruction sets. Each skill is a directory containing a `SKILL.md`. Some are vendored from upstream repos — see below. |
 | `.aiignore` | Patterns for files AI tools should ignore (like `.gitignore` for AI). |
+
+### Vendored Skills
+
+Skills listed in `vendored-skills.txt` (name + raw `SKILL.md` URL) are copied from
+upstream repos, not authored here. `scripts/update-vendored.sh` re-downloads them and
+overwrites the local copy, so never hand-edit a vendored `SKILL.md` — put local
+changes in a separate skill or rule instead. The copies are committed, so `make setup`
+on a new machine installs them without network access to the upstream repos.
+
+Currently vendored: `humanizer` (from [blader/humanizer](https://github.com/blader/humanizer), MIT).
 
 ### Configuration Files
 

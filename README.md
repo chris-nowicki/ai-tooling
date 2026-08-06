@@ -29,9 +29,23 @@ make sync
 Other commands:
 
 ```bash
-make dry-run   # Preview what will be generated
-make check     # Verify generated files haven't drifted
+make dry-run          # Preview what will be generated
+make check            # Verify generated files haven't drifted
+make update-vendored  # Pull the latest version of upstream-authored skills
 ```
+
+## Vendored Skills
+
+Some skills are authored elsewhere and copied in rather than written here. They're
+listed in `vendored-skills.txt` (skill name plus the raw URL of its `SKILL.md`):
+
+| Skill | Upstream |
+|-------|----------|
+| `humanizer` | [blader/humanizer](https://github.com/blader/humanizer) (MIT) |
+
+Because the copies are committed, a fresh machine gets them from `make setup` alone
+— no extra install step. To pick up upstream changes, run `make update-vendored`
+then `make sync`. Don't hand-edit a vendored `SKILL.md`; the refresh overwrites it.
 
 ## What's Inside
 
@@ -74,11 +88,14 @@ ai-dotfiles/
 │   ├── rules/           # code-style.md (style, TS, architecture)
 │   ├── commands/        # commit, create-pr
 │   ├── subagents/       # planner
-│   ├── skills/          # find-skills, frontend-design
+│   ├── skills/          # find-skills, frontend-design, humanizer
 │   └── .aiignore
+├── scripts/
+│   └── update-vendored.sh  # Refreshes vendored skills from upstream
+├── vendored-skills.txt   # Manifest of upstream-authored skills
 ├── rulesync.jsonc        # Rulesync config (targets, features)
 ├── setup.sh              # One-time setup (symlink + first sync)
-├── Makefile              # sync, check, dry-run, setup
+├── Makefile              # sync, check, dry-run, setup, update-vendored
 └── README.md
 ```
 
