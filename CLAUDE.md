@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-AI Dotfiles — a centralized configuration management system for AI coding assistants. It uses [rulesync](https://github.com/dyoshikawa/rulesync) to maintain a single source of truth in `.rulesync/` and generate tool-specific configs for Cursor, Claude Code, OpenCode, and others.
+AI Dotfiles — a centralized configuration management system for AI coding assistants. It uses [rulesync](https://github.com/dyoshikawa/rulesync) to maintain a single source of truth in `.rulesync/` and generate tool-specific configs for Claude Code and Codex CLI.
 
 This is a configuration-only repository (no package.json, no build system, no tests).
 
@@ -33,7 +33,7 @@ make check
 
 1. `.rulesync/` is the source of truth for all AI tool configurations
 2. `setup.sh` symlinks `.rulesync/` to `~/.rulesync` for global access and runs initial sync
-3. Running `make sync` (or `rulesync generate -g`) generates tool-specific config files (`.cursor/`, `CLAUDE.md`, `AGENTS.md`, etc.)
+3. Running `make sync` (or `rulesync generate -g`) generates tool-specific config files (`CLAUDE.md`, `AGENTS.md`, `~/.agents/skills/`, etc.)
 4. `rulesync.jsonc` controls which AI tools (`targets`: `["*"]` for all) and config types (`features`) are generated
 
 ### .rulesync/ Directory
@@ -61,7 +61,7 @@ and `bro` (from [dmmulroy/skills](https://github.com/dmmulroy/skills), MIT).
 
 - **`rulesync.jsonc`** — Main config. `targets: ["*"]` sends to all AI tools; `features` array controls what types of configs are generated; `delete: true` cleans up stale generated files.
 - **`Makefile`** — Shortcuts for `sync`, `check`, `dry-run`, and `setup`.
-- **Frontmatter in `.md` files** — Each config file has YAML frontmatter with a `targets` field. Use `["*"]` for all tools or specify specific targets like `["cursor", "claudecode"]`.
+- **Frontmatter in `.md` files** — Each config file has YAML frontmatter with a `targets` field. Use `["*"]` for all tools or specify specific targets like `["claudecode", "codexcli"]`.
 
 ### External Dependencies
 

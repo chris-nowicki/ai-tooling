@@ -2,7 +2,7 @@
 
 Centralized AI coding assistant configs. Write once, sync everywhere.
 
-Uses [rulesync](https://github.com/dyoshikawa/rulesync) to generate tool-specific configs for Cursor, Claude Code, GitHub Copilot, OpenCode, and more from a single source of truth.
+Uses [rulesync](https://github.com/dyoshikawa/rulesync) to generate tool-specific configs for Claude Code and Codex CLI from a single source of truth.
 
 ## Setup
 
@@ -76,7 +76,7 @@ Your instructions here.
 ```
 
 - `targets: ["*"]` sends to all AI tools
-- `targets: ["cursor", "claudecode"]` sends to specific tools only
+- `targets: ["claudecode", "codexcli"]` sends to specific tools only
 - `globs` controls which files the rule applies to
 
 Then run `make sync`.

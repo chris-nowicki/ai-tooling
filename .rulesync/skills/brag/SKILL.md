@@ -5,6 +5,9 @@ description: >
   of value stored as a GitHub Gist. Use when the user says "/brag", "brag", "add to
   brag doc", or asks to record an accomplishment.
 disable-model-invocation: true
+codexcli:
+  policy:
+    allow_implicit_invocation: false
 ---
 
 # Brag Doc
